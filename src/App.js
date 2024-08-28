@@ -1,9 +1,14 @@
 // LandingPage.js (if using React)
 
 import React from 'react';
-import './App.css'
+import './App.css';
 
 const App = () => {
+  // Function to handle scrolling to the services section
+  const handleScrollToServices = (e) => {
+    e.preventDefault();
+    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="landing-page">
       {/* Hero Section */}
@@ -11,7 +16,7 @@ const App = () => {
         <div className="hero-content">
           <h1>Elevate Your Digital Experience with TechItUp</h1>
           <p>Innovative Software Development Solutions to Make It Happen</p>
-          <a href="#services" className="cta-button">Get Started</a>
+          <a href="#services" className="cta-button" onClick={handleScrollToServices}>Get Started</a>
         </div>
       </section>
 
@@ -43,7 +48,7 @@ const App = () => {
         <p>© 2024 TechItUp. All rights reserved.</p>
       </footer>
     </div>
-    
+
   );
 };
 
